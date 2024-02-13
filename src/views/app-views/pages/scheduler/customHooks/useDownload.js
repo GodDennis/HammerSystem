@@ -11,6 +11,7 @@ import {
 } from "redux/selectors/Scheduler";
 import {
     addBoardElement,
+    cleanup,
     cleanupBoardElements,
     setDragElements,
     setDraggedElement,
@@ -41,7 +42,6 @@ export const useScheduler = () => {
 
     useEffect(() => {
         if (downloadData.length) dispatch(addBoardElement(downloadData));
-        return () => {};
     }, [dispatch, downloadData]);
 
     useEffect(() => {
@@ -50,6 +50,9 @@ export const useScheduler = () => {
             src: elementImageSorce[el.type],
         }));
         dispatch(setDragElements(dragElementsWithSrc));
+        return () => {
+            dispatch(cleanup());
+        };
     }, [dispatch]);
 
     const onDrag = element => {

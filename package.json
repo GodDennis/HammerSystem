@@ -2,7 +2,7 @@
     "name": "emilus",
     "version": "2.0.1",
     "private": true,
-    "homepage": "https://GodDennis.github.io/Hammer_System",
+    "homepage": "https://GodDennis.github.io/HammerSystem",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
@@ -68,7 +68,7 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "dev": "concurrently \"npm run start\" \"gulp watch\"",
-        "deploy": "gh-pages -b master -d build",
+        "deploy": "gh-pages -d build",
         "predeploy": "npm run build"
     },
     "eslintConfig": {
